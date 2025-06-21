@@ -14,7 +14,7 @@
      - mvn clean test -Dcucumber.options="src/test/resources/features/FilteringAndPagination.feature:3"
     (where 3 is the line number where the scenario starts)
 3. To Generate reports:
- - mvn clean test -Dcucumber.options="--plugin html:target/cucumber-reports/html-report.html"
+   - mvn clean test -Dcucumber.options="--plugin html:target/cucumber-reports/html-report.html"
 
 ## For CI Integration:
 - Ensure you have a CI/CD pipeline set up (e.g., GitHub Actions, Jenkins, etc.).Like repository is checkout,
@@ -41,6 +41,6 @@ dependencies are installed, and the environment is configured.
     run: mvn clean install
     name: Run tests
     run: mvn test -Dcucumber.options="--plugin html:target/cucumber-reports/html-report.html"
-    name: Upload test report ```
-
+    name: Upload test report
+  
          
