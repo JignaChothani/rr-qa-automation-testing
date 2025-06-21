@@ -23,22 +23,22 @@
       - Create a `.github/workflows/ci.yml` file in your repository.
       - Use the following template to set up the workflow:
       ```yaml
-      ``` name: CI Pipeline
-        ``` on: [push, pull_request]
-        ``` jobs:
-        ```build:
-        ```runs-on: ubuntu-latest
-        ```steps:
-    ``` name: Checkout code
-        ```uses: actions/checkout@v2
-    ``` name: Set up JDK
-       ``` uses: actions/setup-java@v2
-            with:
-              java-version: '' # or your required JDK version
-    ``` name: Build with Maven
-            run: mvn clean install
-    ``` name: Run tests
-            run: mvn test -Dcucumber.options="--plugin html:target/cucumber-reports/html-report.html"
-    ``` name: Upload test report ```
+        name: CI Pipeline
+        on: [push, pull_request]
+        jobs:
+        build:
+        runs-on: ubuntu-latest
+        steps:
+         name: Checkout code
+            uses: actions/checkout@v2
+        name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+        java-version: '' # or your required JDK version
+        name: Build with Maven
+        run: mvn clean install
+        name: Run tests
+        run: mvn test -Dcucumber.options="--plugin html:target/cucumber-reports/html-report.html"
+        name: Upload test report ```
 
          
